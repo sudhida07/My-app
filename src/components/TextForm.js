@@ -20,6 +20,10 @@ export default function TextForm(props) {
         navigator.clipboard.writeText(textData.value);
     
     }
+    const handleExtraSpace=()=>{
+        let newText=text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
 
     return (
        <>
@@ -31,6 +35,7 @@ export default function TextForm(props) {
         <button className='btn btn-primary mx-1' onClick={handleUpClick}>Convert to Uppercase</button>
         <button className='btn btn-primary mx-1' onClick={handleClearText}>Clear text</button>
         <button className='btn btn-primary mx-1' onClick={handleCopyText}>copy text</button>
+        <button className='btn btn-primary mx-1' onClick={handleExtraSpace}>remove extra space</button>
         </div>
 
         <div className="container my-3">
