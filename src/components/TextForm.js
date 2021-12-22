@@ -14,15 +14,23 @@ export default function TextForm(props) {
         setText('')
     }
 
+    const handleCopyText=()=>{
+        var textData=document.getElementById("myBox");
+        textData.select();
+        navigator.clipboard.writeText(textData.value);
+    
+    }
+
     return (
        <>
        <div className="container">
         <h1>{props.heading}</h1>
         <div className="mb-3">
-       <textarea className="form-control" value={text} onChange={handleOnchanges} id="exampleFormControlTextarea1" rows="3"></textarea>
+       <textarea id="myBox" className="form-control" value={text} onChange={handleOnchanges}  rows="3"></textarea>
         </div>
-        <button className='btn btn-primary' onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className='btn btn-primary' onClick={handleClearText}>Clear text</button>
+        <button className='btn btn-primary mx-1' onClick={handleUpClick}>Convert to Uppercase</button>
+        <button className='btn btn-primary mx-1' onClick={handleClearText}>Clear text</button>
+        <button className='btn btn-primary mx-1' onClick={handleCopyText}>copy text</button>
         </div>
 
         <div className="container my-3">
