@@ -5,6 +5,7 @@ export default function TextForm(props) {
     const handleUpClick=()=>{
         let newText=text.toUpperCase()
         setText(newText)
+        props.showAlert("Converted to UpperCase !","success");
     }
     const handleOnchanges=(event)=>{
         setText(event.target.value)
@@ -12,17 +13,20 @@ export default function TextForm(props) {
 
     const handleClearText=()=>{
         setText('')
+        props.showAlert("cleared text !","success");
     }
 
     const handleCopyText=()=>{
         var textData=document.getElementById("myBox");
         textData.select();
         navigator.clipboard.writeText(textData.value);
+        props.showAlert("Copied to clipboard !","success");
     
     }
     const handleExtraSpace=()=>{
         let newText=text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("removed extra space !","success");
     }
 
     return (
