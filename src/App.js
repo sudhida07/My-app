@@ -46,7 +46,7 @@ function App() {
 
 <>
 <Router>
-<Navbar title="sudheer" aboutText="About1" mode={mode} toggleMode={toggleMode}/>
+<Navbar title="sudheer" aboutText="About" mode={mode} toggleMode={toggleMode}/>
 <div className="container">
 <Alert alert={alert}/>
 <Switch>
